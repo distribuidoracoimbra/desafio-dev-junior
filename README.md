@@ -37,7 +37,17 @@ Sendo possível filtrar por contratado, vigência, e data de inserção e status
 
 Você pode realizar a implementação do seu código na linguagem de programação de sua preferência. Use sua criatividade para construí-lo. 
 
-O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo seu nome completo para identificação.
+Seu projeto será avaliado de acordo com os seguintes critérios.
+
+* Sua aplicação preenche os requerimentos básicos?
+* Você documentou a maneira de configurar o ambiente e rodar sua aplicação?
+* Você seguiu as instruções de envio do desafio?
+* Qualidade e cobertura dos testes unitários.
+* Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
+
+O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo:
+* Nome completo para identificação;
+* 
 
 Qualquer dúvida, você pode enviar um e-mail para desenvolvimento@dcoimbra.com.br ou criar uma issue para informar sobre as dúvidas, afim de manter uma base de conhecimento centralizada neste repositório, onde dúvidas anteriores poderão ser pesquisadas e agilizar a resposta ao entrar em contato com a empresa.
 

@@ -17,7 +17,7 @@ Todos os Contratos possuem:
  
 Almeja que seja possível fazer o cadastro (CRUD) dos contratos, de acordo com os tipos, informando Dados do Contratante, Contratado, vigência, prazos e valores. Sendo que ao cadastrar um novo contrato, este seja iniciado no status em edição.
 
-Deseja também uma opção de forma responsiva para busca, listagem e detalhamento dos Contratos. Este detalhamento deve exibir:
+Deseja também uma opção para busca, listagem e detalhamento dos Contratos. Este detalhamento deve exibir:
 * Dados do Contratante/Contratado;
 * Vigência;
 * Prazos; 

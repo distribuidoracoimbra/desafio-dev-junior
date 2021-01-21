@@ -24,27 +24,30 @@ Deseja também uma opção para busca, listagem e detalhamento dos Contratos. Es
 * Valores;
 * Status.
 
-Sendo possível filtrar por contratado, vigência, e data de inserção e status.
+Sendo possível filtrar por contratado, vigência, data de inserção e status.
 
 ## Pré-requisitos
 
-* Utilizar Banco de dados Relacional SQL SERVER.
+* Utilizar Banco de dados Relacional.
 * Utilizar paradigma de programação Orientada a Objetos.
-* Atualizar padrão de arquitetura.
+* Utilizar padrão de arquitetura.
+
+## Dicas
+* Qualidade e cobertura dos testes unitários.
 
 ## Envio da solução
 
 Você pode realizar a implementação do seu código na linguagem de programação de sua preferência. Use sua criatividade para construí-lo. 
 
-Seu projeto será avaliado de acordo com os seguintes critérios.
+Seu projeto será avaliado de acordo com os seguintes critérios:
 
-* Sua aplicação preenche os requerimentos básicos?
-* Você documentou a maneira de configurar o ambiente e rodar sua aplicação?
-* Você seguiu as instruções de envio do desafio?
-* Qualidade e cobertura dos testes unitários.
+* Deve preencher os requerimentos básicos;
+* Deve seguir as instruções de envio do desafio;
+* Documentar como configurar o ambiente, executar aplicação e testá-la;
 * Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
 
-O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo:
+
+O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo no pull request(pr):
 * Nome completo para identificação;
 * Endereço de Email
 * Linkedin

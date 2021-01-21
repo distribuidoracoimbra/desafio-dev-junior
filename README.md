@@ -5,29 +5,35 @@ Esta página contém detalhes do desafio para recrutamento de desenvolvedores j�
 
 ## Quem somos
 
+<p align="justify">
 A Distribuidora Coimbra nasceu em fevereiro de 1996 com a ideia de oferecer à região um serviço capaz de suprir às necessidades dos comerciantes. Iniciou com 4 (quatro) colaboradores e um número não muito expressivo de produtos.
 Um projeto tímido, pequeno, porém com muita vontade de vencer e crescer se transformou em um dos maiores Atacadistas da Região Norte. O grupo se traduz em uma forte empresa, moderna e inovadora que se destaca por apresentar sólidas parcerias e estratégias diferenciadas, e que não se cansa de buscar o que há de melhor, seja em produtos ou serviços para oferecer aos clientes e colaboradores, os quais são considerados parceiros. Estes que foram conquistados durante os mais de 25 anos de existência se tornaram um valioso patrimônio, no qual pudera transformar a empresa na potência existente hoje.
-
+</p>
+<p align="justify">
 A Coimbra vem ampliando suas instalações e investindo cada vez mais em seus projetos. Todas as filiais estão equipadas com tecnologia de ponta e preparada atender seus clientes de maneira ágil e eficiente.
-
+</p>
+<p align="justify">
 Na área de Tecnologia, a Distribuidora Coimbra está sempre utilizando o que há de mais moderno para garantir o bom funcionamento de toda a organização.  Desenvolvendo soluções e rotinas para a melhoria contínua dos processos, nossos profissionais estão em constante aprendizado e utilizando as melhores ferramentas disponíveis no mercado para atender todas as demandas, sempre com foco no negócio. 
-
-Na área de desenvolvimento, 90% de todos os sistemas da empresa é desenvolvido internamente. A equipe fica responsável por implantar os novos processos sistêmicos em diversas plataformas existentes na empresa, desde aplicações WEB e _mobile_ até o desenvolvimento _desktop_ no ERP da empresa, integrando novos serviços e melhorias, sempre agregando valor ao negócio da empresa.
-
+</p>
+<p align="justify">
+Na área de desenvolvimento, 90% de todos os sistemas da empresa é desenvolvido internamente. A equipe fica responsável por implantar os novos processos sistêmicos em diversas plataformas existentes na empresa, desde aplicações WEB e <i> mobile</i>  até o desenvolvimento <i>desktop</i> no ERP da empresa, integrando novos serviços e melhorias, sempre agregando valor ao negócio da empresa.
+</p>
 
 ## Problema
-
+<p align="justify">
 Uma determinada empresa deseja automatizar seu processo de Gestão de Contrato no qual realiza manualmente utilizando planilhas em Excel. 
 Esses Contatos são documentos acordados com terceiros, que podem ser Empréstimos, Arrendamento, Seguro e Locação de Serviços e Equipamentos.  
 Todos os Contatos possuem: 
-
+</p>
 * Contratante: Dados da empresa: Razão Social, CNPJ, Endereço e telefone;
 * Contratado: Dados da instituição ou empresa que ofertará o serviço: Razão Social, CNPJ, Endereço, telefone;
 * Objeto: Tipo do Contrato;
 * Condições Financeiras: carência, vigência, valores e prazos. 
 * Status: Em Edição, Ativo, Cancelado.
- 
+
+<p align="justify"> 
 Almeja que seja possível fazer o cadastro (CRUD) dos contratos, de acordo com os tipos, informando Dados do Contratante, Contratado, vigência, prazos e valores. Sendo que ao cadastrar um novo contrato, este seja iniciado no status em edição.
+</p>
 
 Deseja também visualizar essas informações em um grid onde seja possível filtrar por contratado, vigência, e data de inserção e status.
 

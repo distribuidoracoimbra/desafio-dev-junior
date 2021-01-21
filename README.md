@@ -47,9 +47,12 @@ Seu projeto será avaliado de acordo com os seguintes critérios.
 
 O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo:
 * Nome completo para identificação;
+* Endereço de Email
 * Linkedin
 
 Qualquer dúvida, você pode enviar um e-mail para desenvolvimento@dcoimbra.com.br ou criar uma issue para informar sobre as dúvidas, afim de manter uma base de conhecimento centralizada neste repositório.
+
+Entraremos em contato para dar feedback ou continuidade no processo seletivo. 
 
 Bom desafio!
 

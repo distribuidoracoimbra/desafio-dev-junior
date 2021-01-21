@@ -23,6 +23,7 @@ Deseja também uma opção de forma responsiva para busca, listagem e detalhamen
 * Prazos; 
 * Valores;
 * Status.
+
 Sendo possível filtrar por contratado, vigência, e data de inserção e status.
 
 ## Pré-requisitos

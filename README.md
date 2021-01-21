@@ -6,8 +6,8 @@ Esta página contém detalhes do desafio para recrutamento de desenvolvedores j�
 ## Problema
 
 Uma determinada empresa deseja automatizar seu processo de Gestão de Contrato no qual realiza manualmente utilizando planilhas em Excel. 
-Esses Contatos são documentos acordados com terceiros, que podem ser Empréstimos, Arrendamento, Seguro e Locação de Serviços e Equipamentos.  
-Todos os Contatos possuem: 
+Esses Contratos são documentos acordados com terceiros, que podem ser Empréstimos, Arrendamento, Seguro e Locação de Serviços e Equipamentos.  
+Todos os Contratos possuem: 
 
 * Contratante: Dados da empresa: Razão Social, CNPJ, Endereço e telefone;
 * Contratado: Dados da instituição ou empresa que ofertará o serviço: Razão Social, CNPJ, Endereço, telefone;
@@ -16,8 +16,6 @@ Todos os Contatos possuem:
 * Status: Em Edição, Ativo, Cancelado.
  
 Almeja que seja possível fazer o cadastro (CRUD) dos contratos, de acordo com os tipos, informando Dados do Contratante, Contratado, vigência, prazos e valores. Sendo que ao cadastrar um novo contrato, este seja iniciado no status em edição.
-
-Deseja também visualizar essas informações em um grid onde seja possível filtrar por contratado, vigência, e data de inserção e status.
 
 Deseja também uma opção de forma responsiva para busca, listagem e detalhamento dos Contratos. Este detalhamento deve exibir:
 * Dados do Contratante/Contratado;

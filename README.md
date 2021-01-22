@@ -65,7 +65,8 @@ Seu projeto será avaliado de acordo com os seguintes critérios:
 * Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
 
 
-O compartilhamento do resultado produzido deve ser feito por email desenvolvimento@dcoimbra.com.br ou diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo no pull request(pr):
+O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo no pull request(pr):
+
 * Nome completo para identificação;
 * Endereço de Email
 * Linkedin

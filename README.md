@@ -3,6 +3,17 @@ Desafio para Recrutamento de Desenvolvedor Júnior
 
 Esta página contém detalhes do desafio para recrutamento de desenvolvedores júnior.
 
+## Vaga
+
+* Formação em ensino superior na Área ou cursando;  
+* Experiência prévia em desenvolvimento de sistemas de no mínimo 02 (dois) dos seguintes ambiente: Web(front-end/back-end), Mobile e Desktop; 
+* Experiência com banco de dados relacional.
+* Habilidades interpessoais de escrita e de comunicação verbal;
+* Seja apaixonado por promover inovações e goste de encarar novos desafios;
+* Seja bom em raciocínio lógico e muita vontade de aprender;
+* Seja focado, proativo e autodidata;
+* Goste de trabalhar em equipe e se comunique bem.
+
 ## Quem somos
 
 <p align="justify">
@@ -65,7 +76,7 @@ Seu projeto será avaliado de acordo com os seguintes critérios:
 * Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
 
 
-O compartilhamento do resultado produzido deve ser feito diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo no pull request(pr):
+O compartilhamento do resultado produzido deve ser feito via e-mail(desenvolvimento@dcoimbra.com.br) ou diretamente pelo GitHub. Para isso, faça um <a href="https://help.github.com/articles/fork-a-repo" target="_blank">fork</a> e nos envie sua versão com a devida implementação e incluindo no pull request(pr):
 
 * Nome completo para identificação;
 * Endereço de Email

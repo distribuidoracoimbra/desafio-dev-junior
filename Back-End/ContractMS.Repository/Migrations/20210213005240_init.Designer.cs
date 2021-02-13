@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContractMS.Repository.Migrations
 {
     [DbContext(typeof(ContractMSContext))]
-    [Migration("20210212003232_init")]
+    [Migration("20210213005240_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,29 +37,30 @@ namespace ContractMS.Repository.Migrations
                     b.Property<int>("ContractorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date_finish")
+                    b.Property<DateTime>("Date_insertion")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("Date_payment")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("Date_start")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Grace_period")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Status")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Telephone_hired")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Tipo_contrato")
+                    b.Property<string>("Type_contract")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("vigencia")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 

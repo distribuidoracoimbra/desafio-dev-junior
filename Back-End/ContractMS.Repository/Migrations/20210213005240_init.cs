@@ -35,13 +35,13 @@ namespace ContractMS.Repository.Migrations
                     Cnpj_hired = table.Column<string>(nullable: true),
                     Address_hired = table.Column<string>(nullable: true),
                     Telephone_hired = table.Column<string>(nullable: true),
-                    Tipo_contrato = table.Column<string>(nullable: true),
+                    Type_contract = table.Column<string>(nullable: true),
                     Grace_period = table.Column<string>(nullable: true),
                     Value = table.Column<decimal>(nullable: false),
                     Date_payment = table.Column<DateTime>(nullable: false),
-                    Date_start = table.Column<DateTime>(nullable: false),
-                    Date_finish = table.Column<DateTime>(nullable: false),
-                    Status = table.Column<string>(nullable: true)
+                    vigencia = table.Column<string>(nullable: true),
+                    Date_insertion = table.Column<DateTime>(nullable: false),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

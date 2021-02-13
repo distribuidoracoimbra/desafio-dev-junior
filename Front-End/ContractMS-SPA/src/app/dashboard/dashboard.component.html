@@ -1,0 +1,36 @@
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <!--contratado, vigência, data de inserção e status.-->
+      <th class="text-center">Data de Inserção</th>
+      <th class="text-center">Contratado</th>
+      <th class="text-center">Tipo de Contrato</th>
+      <th class="text-center">Valor</th>
+      <th class="text-center">Vigência</th>
+      <th class="text-center">Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="contracts && contracts.length">
+    <tr *ngFor="let contract of contracts">
+      <td class="text-center">{{ contract.date_insertion }}</td>
+      <td class="text-center">{{ contract.company_name_hired | uppercase }}</td>
+      <td class="text-center">{{ contract.type_contract | uppercase }}</td>
+      <td class="text-center">{{ contract.value }}</td>
+      <td class="text-center">{{ contract.vigencia }}</td>
+      <td class="text-center">{{ contract.status }}</td>
+      <td>
+      <td>
+        <a [routerLink] = "['/contract','edit', contract.id]"  tooltip="Detalhamento" class="btn btn-sn btn-primary"><i class="fas fa-info"></i></a> 
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!contracts">
+    <tr>
+      <td colspan="7" class="text-center">
+        <h5> Nenhum contrato encontrado!</h5>
+      </td>
+    </tr>
+  </tfoot>
+</table>

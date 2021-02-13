@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using AutoMapper;
 using ContractMS.API.DTO;
+using System;
 
 namespace ContractMS.API.Controllers
 {
@@ -24,14 +25,14 @@ namespace ContractMS.API.Controllers
         }
 
         //Create
-        [HttpPost]
-        public async Task<IActionResult> RegistrationContractor()
+        [HttpPost("registration_contract/{id}")]
+        public async Task<IActionResult> RegistrationContract(ContractDTO model, int id)
         {
             try
-            {
-                var result = await this._repo.GetAllContractor();
+            {  
+                var verify = await this._repo.GetAllContractor();
 
-                if (result.Length == 0)
+                if (verify.Length == 0)
                 {
                     Contractor contractor = new Contractor();
                     contractor.Company_name = "Distribuidora Coimbra";
@@ -40,32 +41,15 @@ namespace ContractMS.API.Controllers
                     contractor.Telephone = "(69) 3216-2600";
                     this._repo.Add(contractor);
 
-                    if (await this._repo.SaveChangesAsync())
-                    {
-                        return this.Created($"/api/get_all{contractor.Id}", contractor);
-                    }
-
-                    return this.StatusCode(StatusCodes.Status500InternalServerError, "Registro de contratante falhou");
+                    await this._repo.SaveChangesAsync();
                 }
 
-                return this.Ok(result[0]);
-            }
-            catch (System.Exception)
-            {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Registro de contrato falhou");
-            }
-        }
-
-        [HttpPost("registration_contract/{id}")]
-        public async Task<IActionResult> RegistrationContract(ContractDTO model, int id)
-        {
-            try
-            {   
-                var contractor = await this._repo.GetContractor_Id(id);
+                var result  = await this._repo.GetContractor_Id(id);
                 
-                model.ContractorId = contractor.Id;
+                model.ContractorId = result.Id;
                 model.Status = "Em Edição";
-                
+                model.Date_insertion = DateTime.Now;
+
                 var contract = this._mapper.Map<Contract>(model);
 
                 this._repo.Add(contract);
@@ -92,6 +76,8 @@ namespace ContractMS.API.Controllers
                 var contract = await this._repo.GetAllContracts();
                 var contractor = await this._repo.GetContractor_Id(id);
                 
+                if (contractor == null) return this.StatusCode(StatusCodes.Status404NotFound, "Contratante não encontrado");
+
                 contractor.Contract = new List<Contract>();
                 contractor.Contract.AddRange(contract);
                 

@@ -52,7 +52,7 @@ namespace ContractMS.Repository
 
         public async Task<Contract[]> GetAllContracts()
         {
-            var query = this._context.Contract.AsNoTracking().OrderByDescending(e => e.Date_start);
+            var query = this._context.Contract.AsNoTracking().OrderByDescending(e => e.Date_insertion);
 
             return await query.ToArrayAsync();
         }

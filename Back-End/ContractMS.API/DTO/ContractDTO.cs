@@ -22,7 +22,7 @@ namespace ContractMS.API.DTO
         public string  Telephone_hired { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public string Tipo_contrato { get; set; }
+        public string Type_contract { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         public string Grace_period { get; set; }
@@ -34,10 +34,9 @@ namespace ContractMS.API.DTO
         public DateTime Date_payment { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public DateTime Date_start { get; set; }
+        public string vigencia { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public DateTime Date_finish { get; set; }
+        public DateTime Date_insertion { get; set; }
 
         public string Status { get; set; }
 

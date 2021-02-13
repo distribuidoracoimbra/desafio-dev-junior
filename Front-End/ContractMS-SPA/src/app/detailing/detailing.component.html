@@ -1,0 +1,79 @@
+<div class="container mt-2">
+  <div class="row d-flex justify-content-center">
+      <div class="col-10">
+          <div class="card">
+            <div class="card-title mb-4">
+              <h1 class="d-flex justify-content-center">Contrato</h1>
+                <div class="d-flex justify-content-center">
+                    <div class="userData">
+                      <div class="card">
+                        <h1 class="d-flex justify-content-center">Contratante</h1>  
+                        <h2 class="d-block ml-2 mr-2" style="font-size: 1.5rem; font-weight: bold">{{contractor.company_name}}</h2>
+                        <h6 class="ml-2 mr-2" >CNPJ: {{contractor.cnpj | mask: '00.000.000/0000-00' }}</h6>
+                        <h6 class="ml-2 mr-2">Endereço: {{contractor.address}}</h6>
+                        <h6 class="ml-2 mr-2">Telefone: {{contractor.telephone | mask: '(00) 0000-0000'}}</h6>
+                      </div>
+                    </div>
+                  <div class="userData">
+                      <div class="card">
+                        <h1 class="d-flex justify-content-center">Contratado</h1>  
+                        <h2 class="d-block ml-2 mr-2" style="font-size: 1.5rem; font-weight: bold">{{contract.company_name_hired}}</h2>
+                        <h6 class="ml-2 mr-2" >CNPJ: {{contract.cnpj_hired | mask: '00.000.000/0000-00' }}</h6>
+                        <h6 class="ml-2 mr-2">Endereço: {{contract.address_hired}}</h6>
+                        <h6 class="ml-2 mr-2">Telefone: {{contract.telephone_hired | mask: '(00) 0000-0000'}}</h6>
+                      </div>
+                  </div>
+                </div>
+             
+              <h2 class="d-flex justify-content-center mt-4">Informações do Contrato</h2>  
+              <div class="userData d-flex justify-content-center">
+                <div class="card col-8">  
+                  <h5 class="ml-2"> - Tipo de Contrato: {{contract.type_contract}}</h5>
+                  <h5 class="ml-2"> - Valor: {{contract.value}}</h5>
+                  <h5 class="ml-2"> - Carência: {{contract.grace_period}}</h5>
+                  <h5 class="ml-2"> - Vigência: {{contract.vigencia}}</h5>
+                  <h5 class="ml-2"> - Status: {{contract.status}}</h5>
+                  <h5 class="ml-2"> - Data de Pagamento: {{contract.date_payment}}</h5>
+                  <h5 class="ml-2"> - Data de Inserção: {{contract.date_insertion}}</h5>
+                </div>
+              </div>
+            
+  
+              </div>
+                <div class="row mt-2" style="justify-content: center;">
+                    <div class="col-sm-3 col-md-2 ml-2 col-5">
+                        <button class="btn btn-ln btn-success btn-block" routerLink="dashboard" ><i class="fas fa-undo-alt"></i>&nbsp;Voltar</button>
+                    </div>
+                    <div class="col-sm-3 col-md-2 ml-2 col-5">
+                        <button class="btn btn-ln btn-primary btn-block" ><i class="fas fa-edit"></i>&nbsp;Editar</button>
+                    </div>
+                    <div class="col-sm-3 col-md-2 ml-2 col-5">
+                        <button class="btn btn-ln btn-danger btn-block" (click)="deleteContract(contract, confirm)" ><i class="fas fa-trash-alt"></i>&nbsp;Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--MODAL Delete (click)="confirmDelete(confirm)"-->
+<div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+	<div class="modal-dialog modal-sm">
+  		<div class="modal-content">
+    		<div class="modal-header">
+      			<h4 class="modal-title pull-left" style="margin-left: 10px;"><i class="fas fa-user-times"></i> Excluir Contrato</h4>
+      			<button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
+        			<span aria-hidden="true">&times;</span>
+      			</button>
+    		</div>
+    		<div class="modal-body">
+      			<p>Tem certeza que deseja excluir este contrato?</p>
+    		</div>    
+    		<div class="modal-footer btn-group d-flex">      
+      			<button class="btn btn-success" (click)="confirm.hide()"><i class="fas fa-window-close"></i>&nbsp;Cancelar</button>
+      			<button class="btn btn-danger" ><i class="fas fa-check"></i> &nbsp;Confirmar</button>
+    		</div>
+  		</div>
+	</div>
+</div>

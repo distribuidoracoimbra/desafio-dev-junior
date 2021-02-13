@@ -88,6 +88,23 @@ namespace ContractMS.API.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de dados falhou");
             }
         }
+
+        [HttpGet("get_contract/{id}")]
+        public async Task<IActionResult> GetContract(int id)
+        {
+            try
+            {
+                var contract = await this._repo.GetContract_Id(id);
+                
+                if (contract == null) return this.StatusCode(StatusCodes.Status404NotFound, "Contratato não encontrado");
+
+                return Ok(contract);
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de dados falhou");
+            }
+        }
         
         //Update
         [HttpPut("update/{id}")]
@@ -99,6 +116,8 @@ namespace ContractMS.API.Controllers
 
                 if (contract == null) return this.StatusCode(StatusCodes.Status404NotFound, "Contrato não encontrado");
 
+                model.Date_insertion = contract.Date_insertion;
+                
                 this._mapper.Map(model, contract);
                 
                 this._repo.Update(contract);

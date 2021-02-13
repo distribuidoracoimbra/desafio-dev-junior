@@ -19,13 +19,15 @@ import { AppComponent } from './app.component';
 //Componentes
 import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DetailingComponent } from './detailing/detailing.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
     NavComponent,
-    DashboardComponent
-  ],
+    DashboardComponent,
+    DetailingComponent
+   ],
   imports: [
     BrowserModule,
     BsDropdownModule.forRoot(),

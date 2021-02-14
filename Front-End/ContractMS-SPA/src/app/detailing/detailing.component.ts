@@ -20,7 +20,7 @@ export class DetailingComponent implements OnInit {
   contractor_id = 1;
 
   constructor(private contractService: ContractService, private toastr: ToastrService, 
-              private router: ActivatedRoute, private fb: FormBuilder) { }
+              private routerAc: ActivatedRoute, private fb: FormBuilder) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -40,7 +40,7 @@ export class DetailingComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   getContract(){
-    const id = +this.router.snapshot.paramMap.get('id');
+    const id = +this.routerAc.snapshot.paramMap.get('id');
     this.contractService.getContractById(id).subscribe(
       // tslint:disable-next-line: variable-name
       (_contract: Contract) => {

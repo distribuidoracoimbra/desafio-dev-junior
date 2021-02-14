@@ -9,24 +9,26 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-//import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//Componentes
+// Componentes
 import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailingComponent } from './detailing/detailing.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavComponent,
     DashboardComponent,
-    DetailingComponent
+    DetailingComponent,
+    RegistrationComponent
    ],
   imports: [
     BrowserModule,

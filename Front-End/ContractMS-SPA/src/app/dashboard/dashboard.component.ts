@@ -70,6 +70,9 @@ export class DashboardComponent implements OnInit {
       (_contractor: Contractor) => {
         this.contractor = Object.assign({}, _contractor);
         this.contracts = this.contractor.contract;
+        this.contracts.forEach(contract => {
+          contract.value =  new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(Number(contract.value));
+        });
         this.contractsFiltered = this.contracts;
       }
     );

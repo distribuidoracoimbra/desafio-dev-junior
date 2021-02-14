@@ -13,6 +13,11 @@ export class ContractService {
 
   constructor(private http: HttpClient) {}
 
+  // tslint:disable-next-line: typedef
+  registerContract(contract: Contract, id: number){
+    return this.http.post(`${this.baseURL}/registration_contract/${id}`, contract);
+  }
+
   getContractor_Contracts(id: number): Observable<Contractor>{
     return this.http.get<Contractor>(`${this.baseURL}/get_all/${id}`);
   }

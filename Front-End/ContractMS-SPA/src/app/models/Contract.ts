@@ -16,7 +16,7 @@ export class Contract {
     type_contract: string;
     // tslint:disable-next-line: variable-name
     grace_period: string;
-    value: number;
+    value: string;
     // tslint:disable-next-line: variable-name
     date_payment: Date;
     vigencia: string;

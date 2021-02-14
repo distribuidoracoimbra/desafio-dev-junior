@@ -56,7 +56,7 @@ namespace ContractMS.API.Controllers
              
                 if (await this._repo.SaveChangesAsync())
                 {
-                    return this.StatusCode(StatusCodes.Status201Created, "contrato registrado com sucesso");
+                    return Created($"/get_contract/{contract.Id}", this._mapper.Map<ContractDTO>(contract));
                 }
 
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Registro de contrato falhou");

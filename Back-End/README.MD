@@ -16,7 +16,7 @@
 > dotnet ef --startup-project ../ContractMS.API database update
 - navege até a pasta ContractMS.API (Exemplo: ../desafio-dev-junior/Back-End/ContractMS.API) e digite o comando para executar a aplicação:
 > dotnet run 
-- A API ira funcionar no endereço `http://localhost:5000/api/`
+- API deve funcionar no endereço `http://localhost:5000/api/`
 
 
 

@@ -14,4 +14,4 @@
 > npm install
 - Nesta mesma pasta ContractMS-SPA (Exemplo: ../desafio-dev-junior/Front-End/ContractMS-SPA) digite o comando para executar a aplicação:
 > ng serve 
-- A SPA deve funcionar no endereço `http://localhost:4200/`
+- SPA deve funcionar no endereço `http://localhost:4200/`

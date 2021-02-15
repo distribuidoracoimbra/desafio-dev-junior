@@ -18,6 +18,17 @@ defineLocale('pt-br', ptBrLocale);
 export class DashboardComponent implements OnInit {
 
   // tslint:disable-next-line: variable-name
+  _filterList_date_insertion: string;
+  get filterList_date_insertion(): string {
+    return this._filterList_date_insertion;
+  }
+
+  set filterList_date_insertion(value: string){
+    this._filterList_date_insertion = value;
+    this.contractsFiltered = this.filterList_date_insertion ? this.filterContracts_date_insertion(this.filterList_date_insertion) : this.contracts;
+  }
+
+  // tslint:disable-next-line: variable-name
   _filterList_hired: string;
   get filterList_hired(): string {
     return this._filterList_hired;
@@ -72,10 +83,18 @@ export class DashboardComponent implements OnInit {
         this.contracts = this.contractor.contract;
         this.contracts.forEach(contract => {
           contract.value =  new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(Number(contract.value));
+          const data = new Date(contract.date_insertion);
+          contract.date_insertion_view = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
         });
         this.contractsFiltered = this.contracts;
       }
     );
+  }
+
+  filterContracts_date_insertion(filterBy: string): Contract[]{
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.contracts.filter(
+      c => c.date_insertion_view.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
   filterContracts_hired(filterBy: string): Contract[]{

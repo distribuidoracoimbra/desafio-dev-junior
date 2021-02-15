@@ -29,12 +29,12 @@
               <div class="userData d-flex justify-content-center">
                 <div class="card col-8">  
                   <h5 class="ml-2 mt-2"> - Tipo de Contrato: {{contract.type_contract}}</h5>
-                  <h5 class="ml-2"> - Valor: {{contract.value}}</h5>
+                  <h5 class="ml-2"> - Valor: {{value}}</h5>
                   <h5 class="ml-2"> - Carência: {{contract.grace_period}}</h5>
                   <h5 class="ml-2"> - Vigência: {{contract.vigencia}}</h5>
                   <h5 class="ml-2"> - Status: {{contract.status}}</h5>
-                  <h5 class="ml-2"> - Data de Pagamento: {{contract.date_payment}}</h5>
-                  <h5 class="ml-2"> - Data de Inserção: {{contract.date_insertion}}</h5>
+                  <h5 class="ml-2"> - Data de Pagamento: {{contract.date_payment | date:"dd/MM/yyyy"}}</h5>
+                  <h5 class="ml-2"> - Data de Inserção: {{contract.date_insertion | date:"dd/MM/yyyy hh:mm:ss a"}}</h5>
                 </div>
               </div>
             
@@ -121,7 +121,7 @@
                     </div>
                     <div class="form-group col-md-3">
                       <label>Data de Pagamento</label>
-                      <input type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat : 'DD/MM/YYYY'}" 
+                      <input type="text" class="form-control" bsDatepicker value="{{date_payment | date:'dd/MM/yyyy'}}" [(ngModel)]="date_payment"
                       [ngClass]="{'is-invalid': editForm.get('date_payment').errors && editForm.get('date_payment').touched}"
                       formControlName = "date_payment" placeholder="Insira a data de pagamento">
                       <div *ngIf = "editForm.get('date_payment').hasError('required') && editForm.get('date_payment').touched" class="invalid-feedback">

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { defineLocale, ptBrLocale } from 'ngx-bootstrap/chronos';
 import { Contract } from '../models/Contract';
 import { ContractService } from '../Services/contract.service';
 
+defineLocale('pt-br', ptBrLocale);
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -16,7 +19,9 @@ export class RegistrationComponent implements OnInit {
   contract: Contract;
 
   constructor(private fb: FormBuilder, private contractService: ContractService,
-              private toastr: ToastrService, private router: Router, private routerAc: ActivatedRoute) { }
+              private toastr: ToastrService, private routerAc: ActivatedRoute, private localeService: BsLocaleService) {
+                this.localeService.use('pt-br');
+              }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {

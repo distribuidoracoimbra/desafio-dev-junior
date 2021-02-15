@@ -116,8 +116,9 @@ namespace ContractMS.API.Controllers
 
                 if (contract == null) return this.StatusCode(StatusCodes.Status404NotFound, "Contrato não encontrado");
 
+                model.ContractorId = contract.ContractorId;
                 model.Date_insertion = contract.Date_insertion;
-                Console.Write(model);
+
                 this._mapper.Map(model, contract);
                 
                 this._repo.Update(contract);

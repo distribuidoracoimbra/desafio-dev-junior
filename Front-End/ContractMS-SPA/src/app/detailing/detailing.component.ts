@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { defineLocale, ptBrLocale } from 'ngx-bootstrap/chronos';
 import { Contract } from '../models/Contract';
 import { Contractor } from '../models/Contractor';
 import { ContractService } from '../Services/contract.service';
 
+defineLocale('pt-br', ptBrLocale);
 @Component({
   selector: 'app-detailing',
   templateUrl: './detailing.component.html',
@@ -18,9 +21,14 @@ export class DetailingComponent implements OnInit {
   editForm: FormGroup;
   // tslint:disable-next-line: variable-name
   contractor_id = 1;
+  // tslint:disable-next-line: variable-name
+  date_payment: string;
+  value: string;
 
-  constructor(private contractService: ContractService, private toastr: ToastrService,
-              private routerAc: ActivatedRoute, private router: Router , private fb: FormBuilder) { }
+  constructor(private contractService: ContractService, private toastr: ToastrService, private fb: FormBuilder,
+              private routerAc: ActivatedRoute, private router: Router , private localeService: BsLocaleService) {
+                this.localeService.use('pt-br');
+              }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -46,6 +54,10 @@ export class DetailingComponent implements OnInit {
       // tslint:disable-next-line: variable-name
       (_contract: Contract) => {
         this.contract = Object.assign({}, _contract);
+        this.value = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(Number(this.contract.value));
+        // tslint:disable-next-line: variable-name
+        const data_p = new Date(this.contract.date_payment);
+        this.date_payment = data_p.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
       }
     );
   }

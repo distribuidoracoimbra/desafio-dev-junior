@@ -1,27 +1,17 @@
-# ContractMS - SPA
+# Single-Page Application (SPA) do Projeto Desafio para Recrutamento de Desenvolvedor Júnior - Distribuidora Coimbra.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+- Desenvolvedor: Thales Junior de Souza Gomes.
+#### Este projeto Utiliza:
 
-## Development server
+- [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4; 
+- TypeScript;
+- Bootstrap;
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Configuração do Ambiente
+- Certifique - se que o NodeJS e o Angular estejam instalados;
+- Todas as bibliotecas utilizadas estão referenciadas nos arquivos `package.json`;
+- Navege até a pasta ContractMS-SPA (Exemplo: ../desafio-dev-junior/Front-End/ContractMS-SPA) e digite o comando para instalar as dependências:
+> npm install
+- Nesta mesma pasta ContractMS-SPA (Exemplo: ../desafio-dev-junior/Front-End/ContractMS-SPA) digite o comando para executar a aplicação:
+> ng serve 
+- A SPA deve funcionar no endereço `http://localhost:4200/`

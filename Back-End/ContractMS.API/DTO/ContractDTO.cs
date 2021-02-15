@@ -31,7 +31,7 @@ namespace ContractMS.API.DTO
         public decimal Value { get; set;}
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public DateTime Date_payment { get; set; }
+        public string Date_payment { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         public string vigencia { get; set; }

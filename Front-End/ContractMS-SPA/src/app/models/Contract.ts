@@ -22,6 +22,7 @@ export class Contract {
     vigencia: string;
     // tslint:disable-next-line: variable-name
     date_insertion: Date;
+    date_insertion_view: string;
     // tslint:disable-next-line: variable-name
     status: string;
 

@@ -47,7 +47,6 @@ export class RegistrationComponent implements OnInit {
         this.registerForm.reset();
         this.toastr.success('Contrato Registrato com Sucesso');
       }, error => {
-        console.log(error)
         this.toastr.error('Erro ao tentar registrar contrato');
       }
     );

@@ -23,7 +23,7 @@ import { DetailingComponent } from './detailing/detailing.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     NavComponent,
     DashboardComponent,
@@ -40,7 +40,7 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxMaskModule.forRoot(),
-    NgxCurrencyModule,  
+    NgxCurrencyModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

@@ -28,7 +28,7 @@
               <h2 class="d-flex justify-content-center mt-4">Informações do Contrato</h2>  
               <div class="userData d-flex justify-content-center">
                 <div class="card col-8">  
-                  <h5 class="ml-2"> - Tipo de Contrato: {{contract.type_contract}}</h5>
+                  <h5 class="ml-2 mt-2"> - Tipo de Contrato: {{contract.type_contract}}</h5>
                   <h5 class="ml-2"> - Valor: {{contract.value}}</h5>
                   <h5 class="ml-2"> - Carência: {{contract.grace_period}}</h5>
                   <h5 class="ml-2"> - Vigência: {{contract.vigencia}}</h5>
@@ -40,12 +40,12 @@
             
   
               </div>
-                <div class="row mt-2" style="justify-content: center;">
+                <div class="row mt-2 d-flex justify-content-center">
                     <div class="col-sm-3 col-md-2 ml-2 col-5">
                         <button class="btn btn-ln btn-success btn-block" routerLink="dashboard" ><i class="fas fa-undo-alt"></i>&nbsp;Voltar</button>
                     </div>
                     <div class="col-sm-3 col-md-2 ml-2 col-5">
-                        <button class="btn btn-ln btn-primary btn-block" ><i class="fas fa-edit"></i>&nbsp;Editar</button>
+                        <button class="btn btn-ln btn-primary btn-block" (click)="editContract(contract, template)" ><i class="fas fa-edit"></i>&nbsp;Editar</button>
                     </div>
                     <div class="col-sm-3 col-md-2 ml-2 col-5">
                         <button class="btn btn-ln btn-danger btn-block" (click)="deleteContract(contract, confirm)" ><i class="fas fa-trash-alt"></i>&nbsp;Excluir</button>
@@ -56,8 +56,126 @@
     </div>
 </div>
 
+<!--MODAL Editar contato-->
+<div bsModal #template="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title pull-left" style="margin-left: 10px;"><i class="fas fa-user-edit"></i> Editar Contrato</h4>
+              <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup] = "editForm">
+                  <div class="form-row d-flex justify-content-center">
+                    <div class="form-group col-md-6">
+                      <label>Razão Social do Contratado</label>
+                      <input type="text" class="form-control"
+                      [ngClass]="{'is-invalid': editForm.get('company_name_hired').errors && editForm.get('company_name_hired').touched}"
+                      formControlName = "company_name_hired" placeholder="Insira a razão social do contratado">
+                      <div *ngIf = "editForm.get('company_name_hired').hasError('required') && editForm.get('company_name_hired').touched" class="invalid-feedback">
+                        Razão social do contratado é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label>CNPJ do Contratado</label>
+                      <input type="text" class="form-control" mask="00.000.000/0000-00"
+                      [ngClass]="{'is-invalid': editForm.get('cnpj_hired').errors && editForm.get('cnpj_hired').touched}"
+                      formControlName = "cnpj_hired" placeholder="Insira o CNPJ do contratado">
+                      <div *ngIf = "editForm.get('cnpj_hired').hasError('required') && editForm.get('cnpj_hired').touched" class="invalid-feedback">
+                        CNPJ do contratado é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Endereço do Contratado</label>
+                      <input type="text" class="form-control" 
+                      [ngClass]="{'is-invalid': editForm.get('address_hired').errors && editForm.get('address_hired').touched}"
+                      formControlName = "address_hired" placeholder="Insira o endereço do contratado">
+                      <div *ngIf = "editForm.get('address_hired').hasError('required') && editForm.get('address_hired').touched" class="invalid-feedback">
+                        Endereço do contratado é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label>Telefone do Contratado</label>
+                      <input type="text" class="form-control" mask="(00) 0000-0000"
+                      [ngClass]="{'is-invalid': editForm.get('telephone_hired').errors && editForm.get('telephone_hired').touched}"
+                      formControlName = "telephone_hired" placeholder="Insira o telefone do contratado">
+                      <div *ngIf = "editForm.get('telephone_hired').hasError('required') && editForm.get('telephone_hired').touched" class="invalid-feedback">
+                        Telefone do contratado é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-5">
+                      <label>Tipo de Contrato</label>
+                      <select name="select" class="form-control" [ngClass]="{'is-invalid': editForm.get('type_contract').errors && editForm.get('type_contract').touched}"
+                      formControlName = "type_contract">
+                        <option value="Empréstimos">Empréstimos</option>
+                        <option value="Seguro">Seguro</option>
+                        <option value="Arrendamento">Arrendamento</option>
+                        <option value="Locação de Serviços">Locação de Serviços</option>
+                        <option value="Locação de Equipamentos.">Locação de Equipamentos</option>
+                      </select>
+                      <div *ngIf = "editForm.get('type_contract').hasError('required') && editForm.get('type_contract').touched" class="invalid-feedback">
+                        Tipo de contrato é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Data de Pagamento</label>
+                      <input type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat : 'DD/MM/YYYY'}" 
+                      [ngClass]="{'is-invalid': editForm.get('date_payment').errors && editForm.get('date_payment').touched}"
+                      formControlName = "date_payment" placeholder="Insira a data de pagamento">
+                      <div *ngIf = "editForm.get('date_payment').hasError('required') && editForm.get('date_payment').touched" class="invalid-feedback">
+                        Data de pagamento é obrigatória.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label>Valor Total</label>
+                      <input type="text" class="form-control" currencyMask [options] = "{ prefix: 'R$ ', thousands: '.' , decimal: ',' , align: 'left' }" 
+                      [ngClass]="{'is-invalid': editForm.get('value').errors && editForm.get('value').touched}"
+                      formControlName = "value" placeholder="Insira o valor total">
+                      <div *ngIf = "editForm.get('value').hasError('required') && editForm.get('value').touched" class="invalid-feedback">
+                        Valor total é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Tempo de Carência</label>
+                      <input type="text" class="form-control" 
+                      [ngClass]="{'is-invalid': editForm.get('grace_period').errors && editForm.get('grace_period').touched}"
+                      formControlName = "grace_period" placeholder="Insira o tempo de carência">
+                      <div *ngIf = "editForm.get('grace_period').hasError('required') && editForm.get('grace_period').touched" class="invalid-feedback">
+                        Tempo de carência é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Vigência</label>
+                      <input type="text" class="form-control" 
+                      [ngClass]="{'is-invalid': editForm.get('vigencia').errors && editForm.get('vigencia').touched}"
+                      formControlName = "vigencia" placeholder="Insira a vigência do Contrato">
+                      <div *ngIf = "editForm.get('vigencia').hasError('required') && editForm.get('vigencia').touched" class="invalid-feedback">
+                        Vigencia do contrato é obrigatório.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Status</label>
+                      <select name="select" class="form-control" formControlName = "status">
+                        <option value="Em Edição" selected>Em Edição</option>
+                        <option value="Ativo">Ativo</option>
+                        <option value="Cancelado">Cancelado</option>
+                      </select>
+                    </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer d-flex">
+              <button class="btn btn-success" (click)="saveEdit(template)" [disabled]="!editForm.valid"><i class="fas fa-save"></i> &nbsp;Salvar</button>
+              <button class="btn btn-danger ml-auto" (click)="template.hide()"><i class="fas fa-window-close"></i>&nbsp;Cancelar</button>
+          </div>
+      </div>
+  </div>
+</div>
 
-<!--MODAL Delete (click)="confirmDelete(confirm)"-->
+
+<!--MODAL Delete-->
 <div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
 	<div class="modal-dialog modal-sm">
   		<div class="modal-content">
@@ -72,7 +190,7 @@
     		</div>    
     		<div class="modal-footer btn-group d-flex">      
       			<button class="btn btn-success" (click)="confirm.hide()"><i class="fas fa-window-close"></i>&nbsp;Cancelar</button>
-      			<button class="btn btn-danger" ><i class="fas fa-check"></i> &nbsp;Confirmar</button>
+      			<button class="btn btn-danger" (click)="confirmDelete(confirm)"><i class="fas fa-check"></i> &nbsp;Confirmar</button>
     		</div>
   		</div>
 	</div>

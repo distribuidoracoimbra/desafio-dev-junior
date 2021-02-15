@@ -18,6 +18,16 @@ export class ContractService {
     return this.http.post(`${this.baseURL}/registration_contract/${id}`, contract);
   }
 
+  // tslint:disable-next-line: typedef
+  updateContract(contract: Contract){
+    return this.http.put(`${this.baseURL}/update/${contract.id}`, contract);
+  }
+
+  // tslint:disable-next-line: typedef
+  deleteContract(id: number){
+    return this.http.delete(`${this.baseURL}/delete/${id}`);
+  }
+
   getContractor_Contracts(id: number): Observable<Contractor>{
     return this.http.get<Contractor>(`${this.baseURL}/get_all/${id}`);
   }

@@ -117,14 +117,14 @@ namespace ContractMS.API.Controllers
                 if (contract == null) return this.StatusCode(StatusCodes.Status404NotFound, "Contrato não encontrado");
 
                 model.Date_insertion = contract.Date_insertion;
-                
+                Console.Write(model);
                 this._mapper.Map(model, contract);
                 
                 this._repo.Update(contract);
 
                 if (await this._repo.SaveChangesAsync())
                 {
-                    return this.StatusCode(StatusCodes.Status201Created, "contrato atualizado com sucesso");
+                    return Created($"/get_contract/{contract.Id}", this._mapper.Map<ContractDTO>(contract));
                 }
 
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Atualização do contrato falhou");

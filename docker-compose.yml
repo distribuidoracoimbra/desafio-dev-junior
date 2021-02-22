@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  webserver:
+    build: .
+    ports:
+      - '80:80'
+    volumes:
+      - ./htdocs:/var/www/html
+      - ./proj:/var/www/html/vagas 
+      - ./apache.conf:/etc/apache2/sites-available/000-default.conf
+      - ./php.ini:/etc/php/7.2/apache2/php.ini
+    links:
+      - db
+  db:
+    image: mariadb:10.3
+    volumes: 
+      - ./init:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_DATABASE=mydb
+    ports:
+      - 3306:3306

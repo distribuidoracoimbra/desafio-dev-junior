@@ -21,13 +21,13 @@ if(isset($_POST['razaosocialCe'],$_POST['cnpjCe'],$_POST['enderecoCe'],
 
 	$obEmpresaCe->setRazaoSocial($_POST['razaosocialCe']);
 	$obEmpresaCe->setCnpj($_POST['cnpjCe']);
-  	$obEmpresaCe->setEndereco($_POST['enderecoCe']);
+	$obEmpresaCe->setEndereco($_POST['enderecoCe']);
 	$obEmpresaCe->setTelefone($_POST['telefoneCe']);
 	$obEmpresaCe->cadastrar('contratante');
 
 	$obEmpresaCo->setRazaoSocial($_POST['razaosocialCo']);
 	$obEmpresaCo->setCnpj($_POST['cnpjCo']);
-  	$obEmpresaCo->setEndereco($_POST['enderecoCo']);
+	$obEmpresaCo->setEndereco($_POST['enderecoCo']);
 	$obEmpresaCo->setTelefone($_POST['telefoneCo']);
 	$obEmpresaCo->cadastrar('contratado');
 	

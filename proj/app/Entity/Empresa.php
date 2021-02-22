@@ -16,19 +16,19 @@ class Empresa{
 
 	public function getId(){ return $this->id; }
 
-	public function setRazaoSocial($rs){ $this->razaoSocial = $rs;	}
+	public function setRazaoSocial($rs){ $this->razaoSocial = $rs; }
 
 	public function getRazaoSocial(){ return $this->razaoSocial; }
 
-	public function setCnpj($cn){ $this->cnpj = $cn;	}
+	public function setCnpj($cn){ $this->cnpj = $cn; }
 
 	public function getCnpj(){ return $this->cnpj; }
 
-	public function setEndereco($en){ $this->endereco = $en;	}
+	public function setEndereco($en){ $this->endereco = $en; }
 
 	public function getEndereco(){ return $this->endereco; }
 
-	public function setTelefone($te){ $this->telefone = $te;	}
+	public function setTelefone($te){ $this->telefone = $te; }
 
 	public function getTelefone(){ return $this->telefone; }
 
@@ -56,17 +56,17 @@ class Empresa{
 
 	public static function getEmpresasContratado($where = null, $order = null, $limit = null, $tipo){
 		return (new Database($tipo))->selectContratado($where,$order,$limit)
-																	 ->fetchAll(PDO::FETCH_CLASS,self::class);
+									->fetchAll(PDO::FETCH_CLASS,self::class);
 	}
 
 	public static function getEmpresas($where = null, $order = null, $limit = null, $tipo){
 		return (new Database($tipo))->select($where,$order,$limit)
-																	 ->fetchAll(PDO::FETCH_CLASS,self::class);
+									->fetchAll(PDO::FETCH_CLASS,self::class);
 	}
 
 	public static function getEmpresa($tipo, $ident){
 		return (new Database($tipo))->select('id = '.$ident)
-															->fetchObject(self::class);
+									->fetchObject(self::class);
 	}
 
 	public function excluir($tipo){

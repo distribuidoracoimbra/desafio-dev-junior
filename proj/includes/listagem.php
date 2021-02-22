@@ -46,11 +46,11 @@ foreach($contratos as $contrato){
 		</td>
 		</tr>';
 }
-$resultados = strlen($resultados) ? $resultados : '<tr>
-	<td colspan="6" class="text-center">
-	Nenhum contrato encontrado
-	</td>
-	</tr>';
+	$resultados = strlen($resultados) ? $resultados : '<tr>
+		<td colspan="6" class="text-center">
+		Nenhum contrato encontrado
+		</td>
+		</tr>';
 
 ?>
 
@@ -60,65 +60,68 @@ $resultados = strlen($resultados) ? $resultados : '<tr>
 
 	<section>
 		<table class="table bg-light mt-3">
-				<tr> <th><a href="cadastrar.php">
-						<button class="btn btn-success">Novo Contrato</button>
-					</a></th>
-					<th> <input class="form-control" type="text" id="searchContratante" onkeyup="searchFunction()" placeholder="Pesquisar por contratantes (Razão Social) ..."> 
-				</th> </tr>
+			<tr>
+				<th><a href="cadastrar.php">
+				<button class="btn btn-success">Novo Contrato</button>
+				</a></th>
+				<th><input class="form-control" type="text" id="searchContratante" onkeyup="searchFunction()" placeholder="Pesquisar por contratantes (Razão Social) ..."> 
+				</th>
+			</tr>
 		</table>
 	</section>
 
 	<section>
 		<form method="get">
 			<div class="row">
-			<div class="col">
-				<label>Contratado</label>
-				<input type="text" name="busca" class="form-control" value="<?=$busca?>">
-			</div>
 
-			<div class="col">
-				<label>Operador</label>
-				<select name="tvigencia" class="form-control">
-					<option value="">Maior/Menor/Igual</option>
-					<option value="a"<?=$filtroVigencia == 'a' ? 'selected' : ''?> >Maior</option>
-					<option value="e"<?=$filtroVigencia == 'e' ? 'selected' : ''?> >Menor</option>
-					<option value="i"<?=$filtroVigencia == 'i' ? 'selected' : ''?> >Igual</option>
-				</select>
-			</div>
+				<div class="col">
+					<label>Contratado</label>
+					<input type="text" name="busca" class="form-control" value="<?=$busca?>">
+				</div>
 
-			<div class="col">
-				<label>Vigência</label>
-				<input type="date" name="vigencia" class="form-control" value="<?=$_GET['vigencia']?>">
-			</div>
+				<div class="col">
+					<label>Operador</label>
+					<select name="tvigencia" class="form-control">
+						<option value="">Maior/Menor/Igual</option>
+						<option value="a"<?=$filtroVigencia == 'a' ? 'selected' : ''?> >Maior</option>
+						<option value="e"<?=$filtroVigencia == 'e' ? 'selected' : ''?> >Menor</option>
+						<option value="i"<?=$filtroVigencia == 'i' ? 'selected' : ''?> >Igual</option>
+					</select>
+				</div>
 
-			<div class="col">
-				<label>Operador</label>
-				<select name="tinsercao" class="form-control">
-					<option value="">Maior/Menor/Igual</option>
-					<option value="a"<?=$filtroInsercao == 'a' ? 'selected' : ''?> >Maior</option>
-					<option value="e"<?=$filtroInsercao == 'e' ? 'selected' : ''?> >Menor</option>
-					<option value="i"<?=$filtroInsercao == 'i' ? 'selected' : ''?> >Igual</option>
-				</select>
-			</div>
+				<div class="col">
+					<label>Vigência</label>
+					<input type="date" name="vigencia" class="form-control" value="<?=$_GET['vigencia']?>">
+				</div>
 
-			<div class="col">
-				<label>Data de Inserção</label>
-				<input type="date" name="insercao" class="form-control" value="<?=$_GET['insercao']?>">
-			</div>
+				<div class="col">
+					<label>Operador</label>
+					<select name="tinsercao" class="form-control">
+						<option value="">Maior/Menor/Igual</option>
+						<option value="a"<?=$filtroInsercao == 'a' ? 'selected' : ''?> >Maior</option>
+						<option value="e"<?=$filtroInsercao == 'e' ? 'selected' : ''?> >Menor</option>
+						<option value="i"<?=$filtroInsercao == 'i' ? 'selected' : ''?> >Igual</option>
+					</select>
+				</div>
 
-			<div class="col">
-				<label>Status</label>
-				<select name="status" class="form-control">
-					<option value="">Em Edição/Ativo/Cancelado</option>
-					<option value="e" <?=$filtroStatus == 'e' ? 'selected' : ''?> >Em Edição</option>
-					<option value="a" <?=$filtroStatus == 'a' ? 'selected' : ''?> >Ativo</option>
-					<option value="c" <?=$filtroStatus == 'c' ? 'selected' : ''?> >Cancelado</option>
-				</select>
-			</div>
+				<div class="col">
+					<label>Data de Inserção</label>
+					<input type="date" name="insercao" class="form-control" value="<?=$_GET['insercao']?>">
+				</div>
 
-			<div class="col d-flex align-items-end">
-				<button type="submit" class="btn btn-primary">Filtrar</button>
-			</div>
+				<div class="col">
+					<label>Status</label>
+					<select name="status" class="form-control">
+						<option value="">Em Edição/Ativo/Cancelado</option>
+						<option value="e" <?=$filtroStatus == 'e' ? 'selected' : ''?> >Em Edição</option>
+						<option value="a" <?=$filtroStatus == 'a' ? 'selected' : ''?> >Ativo</option>
+						<option value="c" <?=$filtroStatus == 'c' ? 'selected' : ''?> >Cancelado</option>
+					</select>
+				</div>
+
+				<div class="col d-flex align-items-end">
+					<button type="submit" class="btn btn-primary">Filtrar</button>
+				</div>
 
 			</div>
 		</form>

@@ -85,7 +85,7 @@ class Contrato{
 			'tcontrato' => $this->getTipoContrato(),
 			'carencia'  => $this->getCarencia(),
 			'vigencia'  => $this->getVigencia(),
-			'valores'	  => $this->getValores(),
+			'valores'	=> $this->getValores(),
 			'prazo'     => $this->getPrazo(),
 			'status'    => $this->getStatus(),
 		]);
@@ -97,12 +97,12 @@ class Contrato{
 
 	public static function getContratos($where = null, $order = null, $limit = null){
 		return (new Database('contrato'))->select($where,$order,$limit)
-																	 ->fetchAll(PDO::FETCH_CLASS,self::class);
+										->fetchAll(PDO::FETCH_CLASS,self::class);
 	}
 
 	public static function getContrato($id){
 		return (new Database('contrato'))->select('id = '.$id)
-																	 ->fetchObject(self::class);
+										->fetchObject(self::class);
 	}
 
 }

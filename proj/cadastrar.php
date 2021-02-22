@@ -16,17 +16,18 @@ $obContrato = new Contrato;
 if(isset($_POST['razaosocialCe'],$_POST['cnpjCe'],$_POST['enderecoCe'],
 	$_POST['telefoneCe'],$_POST['razaosocialCo'],$_POST['cnpjCo'],
 	$_POST['enderecoCo'],$_POST['telefoneCo'],$_POST['tcontrato'],
-	$_POST['carencia'],$_POST['vigencia'],$_POST['valores'],$_POST['prazo'])){
+	$_POST['carencia'],$_POST['vigencia'],$_POST['valores'],
+	$_POST['prazo'])){
 
 	$obEmpresaCe->setRazaoSocial($_POST['razaosocialCe']);
 	$obEmpresaCe->setCnpj($_POST['cnpjCe']);
-  $obEmpresaCe->setEndereco($_POST['enderecoCe']);
+  	$obEmpresaCe->setEndereco($_POST['enderecoCe']);
 	$obEmpresaCe->setTelefone($_POST['telefoneCe']);
-  $obEmpresaCe->cadastrar('contratante');
+	$obEmpresaCe->cadastrar('contratante');
 
 	$obEmpresaCo->setRazaoSocial($_POST['razaosocialCo']);
 	$obEmpresaCo->setCnpj($_POST['cnpjCo']);
-  $obEmpresaCo->setEndereco($_POST['enderecoCo']);
+  	$obEmpresaCo->setEndereco($_POST['enderecoCo']);
 	$obEmpresaCo->setTelefone($_POST['telefoneCo']);
 	$obEmpresaCo->cadastrar('contratado');
 	

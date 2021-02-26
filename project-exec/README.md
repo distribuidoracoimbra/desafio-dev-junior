@@ -11,7 +11,7 @@ Cetifique-de instalá-los:
 
 ## Executando
 
-Após fazer o donwload do `devcoimbra-exec.jar`, navegue até o diretório de download, usando o `cmd` ou `Windows Power Shell` e execute a seguinte linha de comando:
+Após fazer o donwload do `devcoimbra-exec.jar`, navegue até o diretório de download, usando o `cmd` ou `Windows Power Shell` ou `terminal do Linux` e execute a seguinte linha de comando:
 
 <code> java -jar devcoimbra-exec.jar
 

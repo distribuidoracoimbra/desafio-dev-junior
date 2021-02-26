@@ -25,14 +25,14 @@ Faça o download do `devcoimbra.zip` e extraia no diretório em algum diretório
 * * `Help` > `Eclipse Marketplace` > pesquise por `Thymeleaf` e instale. Reinicie o ambiente do Eclipse IDE;
 
 * Atualizando o projeto:
-* * Selecione o projeto dentro da IDE e com botão esquerdo selecione `Maven` > `Update Project...`
+* * Selecione o projeto dentro da IDE e com botão esquerdo selecione `Maven` > `Update Project...`;
 
 * Executando: 
-* * Selecione o projeto dentro da IDE e com botão esquerdo selecione `Run as` > `Spring Boot App`.
+* * Selecione o projeto dentro da IDE e com botão esquerdo selecione `Run as` > `Spring Boot App`;
 
 * Rodando: 
 > Cerfique em qual porta ira ser executado pelo tomcat, geralmente ele usa porta 8080.
-* * Abra o navegador de sua prefrência e cole: `http://localhost:8080/`. E poderá utilizar a aplicação. 
+* * Abra o navegador de sua prefrência e cole: `http://localhost:8080/`. E poderá utilizar a aplicação.
 
 > Obs.: Fique atento na `barra inferior direita e console da IDE` onde acontecem as atualizações e mudanças do projeto.
 

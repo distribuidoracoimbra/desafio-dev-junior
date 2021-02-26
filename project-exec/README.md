@@ -13,7 +13,7 @@ Cetifique-de instalá-los:
 
 Após fazer o donwload do `devcoimbra-exec.jar`, navegue até o diretório de download, usando o `cmd` ou `Windows Power Shell` ou `terminal do Linux` e execute a seguinte linha de comando:
 
-<code> java -jar devcoimbra-exec.jar
+<code> java -jar devcoimbra-exec.jar </code>
 
 > Cerfique em qual porta ira ser executado pelo tomcat, geralmente ele usa porta `8080`.
 

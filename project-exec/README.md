@@ -15,6 +15,6 @@ Após fazer o donwload do `devcoimbra-exec.jar`, navegue até o diretório de do
 
 <code> java -jar devcoimbra-exec.jar </code>
 
-> Cerfique em qual porta ira ser executado pelo tomcat, geralmente ele usa porta `8080`.
+> Cerfique em qual porta irá ser executado pelo tomcat, geralmente ele usa porta `8080`.
 
 Abra o navegador de sua preferência e cole `http://localhost:8080/`. E poderá utilizar a aplicação.

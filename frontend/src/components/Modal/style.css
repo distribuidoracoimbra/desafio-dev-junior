@@ -1,0 +1,22 @@
+.modal_container{
+    width: 100%;
+}
+
+.Title{
+    width: 100%;
+    text-align: center;
+}
+
+.Description{
+    margin-right: 10px;
+}
+
+.status-ct{
+    text-align: center;
+}
+
+h4{
+    margin-left: 25px;
+    color: #333;
+    font-weight: 400;
+}

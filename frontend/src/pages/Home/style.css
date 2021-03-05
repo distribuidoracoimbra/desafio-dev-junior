@@ -1,0 +1,47 @@
+.ContainerHme{
+    display: grid;
+    grid-template-columns: 300px auto;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
+.ContainerHme .conteudo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 50px;
+    overflow-y: scroll;
+}
+.conteudo .header_conteudo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo .header_conteudo .wid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+.conteudo .box_container {
+    margin: 30px 0;
+    padding: 20px 0;
+}
+
+.conteudo .box_doc{
+    padding: 20px 20px;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bnt_limpa{
+    margin-bottom: 0 !important;
+    margin-top:15px;
+}

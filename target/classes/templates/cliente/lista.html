@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><i class="oi oi-caret-right"></i>
+						<span>Lista de Clientes</span></li>
+				</ul>
+				<a class="btn btn-primary btn-md" href="/clientes/cadastrar"
+					role="button"> <span class="oi oi-plus" title="Cadastro"
+					aria-hidden="true"></span> <span>Cadastrar Clientes</span>
+				</a>
+			</div>
+		</nav>
+
+			<div class="table-responsive">
+
+				<div th:replace="fragments/alert"></div>
+
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>CNPJ</th>
+							<th>Razão Social</th>
+							<th>Tipo</th>
+							<th>Endereço</th>
+							<th>Ação</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="cl : ${clientes}">
+							<td th:text="${cl.id}">1</td>
+							<td th:text="${cl.cnpj}">99.999.999/9999-99</td>
+							<td th:text="${cl.razao_social}">Distribuidora Coimbra</td>
+							<td th:text="${cl.tipo_cliente.descricao}">Contratante</td>
+							<td>
+								<button type="button" class="btn btn-secondary btn-sm"
+									data-container="body" data-toggle="popover"
+									data-placement="top"
+									th:attr="data-content=${#strings.concat(
+			                                    cl.endereco.logradouro, ', ', 
+			                                    cl.endereco.numero, ' ', 
+			                                    cl.endereco.complemento, ' - ', 
+			                                    cl.endereco.bairro, ', ',
+			                                    cl.endereco.cidade, ' - ', 
+			                                    cl.endereco.uf.descricao, ' - ',
+			                                    cl.endereco.cep
+		                                    )}">
+
+									<span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
+								</button>
+							</td>
+							
+							
+							<!-- Botões de ação -->
+							<td colspan="3">
+							<!-- 
+							<a class="btn btn-success btn-sm"
+								th:href="@{clientes/editar/{id}/contratos (id=${cl.id}) }"
+								role="button"> <span class="oi oi-file" title="Contrato"
+									aria-hidden="true"></span>
+							</a>  -->
+							
+							<a class="btn btn-info btn-sm"
+								th:href="@{/clientes/editar/{id} (id=${cl.id}) }" role="button">
+									<span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
+							</a>
+
+
+								<button
+									th:id="${#strings.concat('btn_clientes/excluir/', cl.id) }"
+									type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+									data-target="#myModal">
+									<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
+								</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		
+
+		<div th:replace="fragments/modal :: modal"></div>
+
+	</section>
+</body>
+</html>

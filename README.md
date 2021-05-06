@@ -86,9 +86,6 @@ Qualquer dúvida, você pode enviar um e-mail para desenvolvimento@dcoimbra.com.
 
 Entraremos em contato para dar feedback ou continuidade no processo seletivo. 
 
-## Prazo para Envio da Solução
-
-Será aceito os projetos submetidos até a data de 01/03/2021 às 23:59:00.
 
 Bom desafio!
 

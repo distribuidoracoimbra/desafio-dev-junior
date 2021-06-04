@@ -2,7 +2,7 @@ Desafio para Recrutamento de Desenvolvedor Júnior
 ======================================
 
 Esta página contém detalhes do desafio para recrutamento de desenvolvedores júnior.
-
+qsedfrq asdfasd fasdfasdfasdf
 ## Vaga
 
 * Formação em ensino superior na Área ou cursando;  
@@ -16,7 +16,7 @@ Esta página contém detalhes do desafio para recrutamento de desenvolvedores j�
 
 ## Quem somos
 
-<p align="justify">
+<p align="justify">Cancel changes
 A Distribuidora Coimbra nasceu em fevereiro de 1996 com a ideia de oferecer à região um serviço capaz de suprir às necessidades dos comerciantes. Iniciou com 4 (quatro) colaboradores e um número não muito expressivo de produtos.
 Um projeto tímido, pequeno, porém com muita vontade de vencer e crescer se transformou em um dos maiores Atacadistas da Região Norte. O grupo se traduz em uma forte empresa, moderna e inovadora que se destaca por apresentar sólidas parcerias e estratégias diferenciadas, e que não se cansa de buscar o que há de melhor, seja em produtos ou serviços para oferecer aos clientes e colaboradores, os quais são considerados parceiros. Estes que foram conquistados durante os mais de 25 anos de existência se tornaram um valioso patrimônio, no qual pudera transformar a empresa na potência existente hoje.
 </p>
